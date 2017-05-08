@@ -426,7 +426,10 @@ package alpide_bfm_pkg is
     );
 
   --! @brief Receive a 8-bit character on DCTRL
-  --! @details 
+  --! @details Wait until rising_edge, check if dctrl_in is START_BIT.
+  --! Otherwise loop until this occurs. Then wait for 1 clock period and sample
+  --! dctrl_in 8 times while shifting the data into variable. Confirm that last
+  --! bit is STOP_BIT. 
   procedure receive_char (
     variable data_rec     : out std_logic_vector(7 downto 0);
     signal clk            : in  std_logic;
@@ -436,6 +439,7 @@ package alpide_bfm_pkg is
     constant config       :     t_alpide_bfm_config := C_ALPIDE_BFM_CONFIG_DEFAULT
     );
 
+  --! @brief Set up the ALPIDE in continuous mode
     procedure alpide_init_continuous (
     constant msg          : in    string;
     signal clk            : in    std_logic;
