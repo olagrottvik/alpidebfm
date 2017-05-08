@@ -13,7 +13,6 @@
 -- Description:
 --! @file
 --! @brief Bus functional model for ALPIDE4 Control Interface
---! @details  Bla bla bla
 --! @author Ola Slettevoll Groettvik <Ola.Grottvik@student.uib.no>
 -------------------------------------------------------------------------------
 -- Copyright (c) 2016 
